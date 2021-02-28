@@ -8,13 +8,15 @@ import { MatSliderModule } from '@angular/material/slider';
 import { AddEditEmpleadoComponent } from './components/add-edit-empleado/add-edit-empleado.component';
 import { ListarEmpleadoComponent } from './components/listar-empleado/listar-empleado.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MensajeConfirmacionComponent } from './components/shared/mensaje-confirmacion/mensaje-confirmacion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEditEmpleadoComponent,
     ListarEmpleadoComponent,
-    NavbarComponent
+    NavbarComponent,
+    MensajeConfirmacionComponent
   ],
   imports: [
     BrowserModule,
