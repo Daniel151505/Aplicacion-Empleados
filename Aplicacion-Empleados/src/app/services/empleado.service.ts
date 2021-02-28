@@ -19,6 +19,6 @@ export class EmpleadoService {
   constructor() { }
 
   getEmpleado() {
-    this.listaEmpleado.slice()
+   return this.listaEmpleado.slice()
   }
 }
