@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { EmpleadoModule } from '../models/empleado/empleado.module';
+import { Empleado } from '../models/empleado.module';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmpleadoService {
-  listaEmpleado: EmpleadoModule[] = [
+  listaEmpleado: Empleado[] = [
     {
       nombreCompleto: 'Lucas Martinez', 
       correo: 'martinez@gmail.com',
