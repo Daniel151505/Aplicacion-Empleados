@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { AddEditEmpleadoComponent } from './components/add-edit-empleado/add-edit-empleado.component';
 import { ListarEmpleadoComponent } from './components/listar-empleado/listar-empleado.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEditEmpleadoComponent,
-    ListarEmpleadoComponent
+    ListarEmpleadoComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
