@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { EmpleadoService } from 'src/app/services/empleado.service';
+import { Empleado } from 'src/app/models/empleado.module';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -31,6 +32,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class ListarEmpleadoComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
+  listaEmpleado : Empleado []
 
   @ViewChild(MatSort , {static: true}) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -44,6 +46,10 @@ export class ListarEmpleadoComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  cargarEmpleados(){
+    this.listaEmpleado = this.empleadoService.getEmpleado()
   }
 
 }
