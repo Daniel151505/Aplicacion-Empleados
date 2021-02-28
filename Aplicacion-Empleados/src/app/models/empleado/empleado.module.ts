@@ -9,4 +9,11 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class EmpleadoModule { }
+export class EmpleadoModule { 
+  nombreCompleto: string
+  telefono: number
+  correo: string
+  fechaIngreso: Date
+  estadoCivil: string
+  sexo: string
+}
