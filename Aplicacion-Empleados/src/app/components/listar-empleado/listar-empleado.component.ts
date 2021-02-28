@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { EmpleadoService } from 'src/app/services/empleado.service';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -33,7 +34,7 @@ export class ListarEmpleadoComponent implements OnInit {
 
   @ViewChild(MatSort , {static: true}) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  constructor() { }
+  constructor(private empleadoService: EmpleadoService) { }
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
