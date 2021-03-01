@@ -11,7 +11,7 @@
                     <mat-label>Nombre Completo</mat-label>
                     <input matInput formControlName="nombreCompleto">
                 </mat-form-field>
-                <div class="span">
+                <div *ngIf="myform.get('nombreCompleto').hasError('required') && myform.get('nombreCompleto').touched" class="span">
                     <span class="mda-form-msg">Este campo es <strong>requerido</strong> </span>
                 </div>
             </div>
