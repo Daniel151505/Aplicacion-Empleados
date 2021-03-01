@@ -19,6 +19,8 @@ import { EmpleadoService } from 'src/app/services/empleado.service';
 export class AddEditEmpleadoComponent implements OnInit {
   estadosCiviles: any[] = ['Soltero' , 'Casado' , 'Divorciado']
   myform: FormGroup
+  idEmpleado: any
+  accion = 'Crear'
 
   constructor(private fb: FormBuilder,
               private empleadoService: EmpleadoService,
