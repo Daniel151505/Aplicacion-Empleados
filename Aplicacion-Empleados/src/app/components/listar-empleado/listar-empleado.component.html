@@ -10,42 +10,42 @@
 <mat-form-field>
     <mat-label>Filtro</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Filtro" #input>
-  </mat-form-field>
+</mat-form-field>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort >
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort class="text-center">
     
-    <ng-container matColumnDef="nombreCompleto">
-      <th mat-header-cell *matHeaderCellDef> Nombre Completo </th>
+    <ng-container matColumnDef="nombreCompleto" >
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Nombre Completo </th>
       <td mat-cell *matCellDef="let element"> {{element.nombreCompleto}} </td>
     </ng-container>
   
-    <ng-container matColumnDef="correo">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Correo </th>
+    <ng-container matColumnDef="correo" class="text-center">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Correo </th>
       <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
     </ng-container>
   
     <ng-container matColumnDef="estadoCivil">
-      <th mat-header-cell *matHeaderCellDef> Estado Civil </th>
+      <th mat-header-cell *matHeaderCellDef class="text-center" > Estado Civil </th>
       <td mat-cell *matCellDef="let element"> {{element.estadoCivil}} </td>
     </ng-container>
 
     <ng-container matColumnDef="fechaIngreso">
-      <th mat-header-cell *matHeaderCellDef> Fecha de Ingreso </th>
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Fecha de Ingreso </th>
       <td mat-cell *matCellDef="let element"> {{element.fechaIngreso | date:'dd/MM/yyyy'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="sexo">
-        <th mat-header-cell *matHeaderCellDef> Sexo </th>
+        <th mat-header-cell *matHeaderCellDef class="text-center"> Sexo </th>
         <td mat-cell *matCellDef="let element"> {{element.sexo}} </td>
     </ng-container>
 
     <ng-container matColumnDef="telefono">
-        <th mat-header-cell *matHeaderCellDef> Telefono </th>
+        <th mat-header-cell *matHeaderCellDef class="text-center"> Telefono </th>
         <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
     </ng-container>
 
     <ng-container matColumnDef="acciones">
-        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <th mat-header-cell *matHeaderCellDef class="text-center"> Acciones </th>
         <td mat-cell *matCellDef="let element; let i = index">  
           <a class="pointer" style="color: #1878B0;" routerLink="edit/{{i}}">
             <mat-icon>edit</mat-icon>
