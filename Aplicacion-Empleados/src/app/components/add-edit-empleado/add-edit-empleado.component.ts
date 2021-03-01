@@ -35,6 +35,8 @@ export class AddEditEmpleadoComponent implements OnInit {
         estadoCivil: ['', [Validators.required]],
         sexo: ['', [Validators.required]]
       })
+      const idParam = 'id'
+      this.idEmpleado = this.Route.snapshot.params[idParam]
    }
 
   ngOnInit(): void {
