@@ -68,7 +68,7 @@ export class AddEditEmpleadoComponent implements OnInit {
   agregarEmpleado(empleado: Empleado){
     this.empleadoService.agregarEmpleado(empleado)
     this.snackBar.open('¡El empleado fue registrado con éxito!','',{
-      duration: 30000
+      duration: 3000
     })
     this.route.navigate(['/'])
   }
@@ -76,7 +76,7 @@ export class AddEditEmpleadoComponent implements OnInit {
   editarEmpleado(empleado: Empleado){
     this.empleadoService.editEmpleado(empleado, this.idEmpleado)
     this.snackBar.open('¡El empleado fue actualizado con éxito!','',{
-      duration: 30000
+      duration: 3000
     })
     this.route.navigate(['/'])
   }
