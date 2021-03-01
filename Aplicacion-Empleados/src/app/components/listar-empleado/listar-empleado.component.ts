@@ -4,6 +4,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { EmpleadoService } from 'src/app/services/empleado.service';
 import { Empleado } from 'src/app/models/empleado.module';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-listar-empleado',
@@ -17,7 +18,9 @@ export class ListarEmpleadoComponent implements OnInit {
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  constructor(private empleadoService: EmpleadoService) { }
+
+  constructor(private empleadoService: EmpleadoService, 
+              public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.cargarEmpleados();
