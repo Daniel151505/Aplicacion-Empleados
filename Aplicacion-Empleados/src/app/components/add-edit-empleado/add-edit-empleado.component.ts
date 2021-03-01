@@ -40,6 +40,9 @@ export class AddEditEmpleadoComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    if (this.idEmpleado !== undefined) {
+        this.accion = 'Editar'
+    }
   }
 
   guardarEmpleado(){
