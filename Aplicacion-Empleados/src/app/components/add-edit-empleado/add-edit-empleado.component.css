@@ -19,9 +19,12 @@ button {
     color: #f44336;
 }
 
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
 
 .color{
     color: white;
     font-size: 40px;
     font-family: 'Fredoka One', cursive;
-}
+  }
