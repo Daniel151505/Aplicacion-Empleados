@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-mensaje-confirmacion',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mensaje-confirmacion.component.css']
 })
 export class MensajeConfirmacionComponent implements OnInit {
-
-  constructor() { }
+  mensaje: string;
+  btn = 'aceptar';
+  constructor(public dialogRef: MatDialogRef<MensajeConfirmacionComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any) { 
+                this.mensaje = data.mensaje;
+              }
 
   ngOnInit(): void {
   }
 
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }
