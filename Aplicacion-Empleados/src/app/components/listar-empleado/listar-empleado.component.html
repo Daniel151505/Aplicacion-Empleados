@@ -1,18 +1,23 @@
 <div class="row">
   <div class="col-lg-6">
-    <h2>Listado de Empleados</h2>
+    <h2 class="color">Listado de Empleados</h2>
   </div>
   <div class="col-lg-6" style="text-align: right;">
     <button mat-raised-button color="warn" style="background-color: #F44336;color: white;" class="btn btn-warn" routerLink="/add">AGREGAR</button>
   </div>
 </div>
 
-<mat-form-field>
-    <mat-label>Filtro</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Filtro" #input>
-</mat-form-field>
+<div class="card">
+  <div class="card-body">
+    <mat-form-field>
+      <mat-label>Filtro</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Filtro" #input>
+  </mat-form-field>
+  </div>
+</div>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort class="text-center">
+<div class="pt-3">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 text-center" matSort>
     
     <ng-container matColumnDef="nombreCompleto" >
       <th mat-header-cell *matHeaderCellDef class="text-center"> Nombre Completo </th>
@@ -59,5 +64,6 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+</div>
 
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
