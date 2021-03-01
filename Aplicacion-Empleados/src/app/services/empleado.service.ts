@@ -53,4 +53,13 @@ export class EmpleadoService {
   getEmpleadosEditar(index:number){
     return this.listaEmpleado[index]
   }
+
+  editEmpleado(empleado: Empleado, idEmpleado: number) {
+    this.listaEmpleado[idEmpleado].nombreCompleto = empleado.nombreCompleto
+    this.listaEmpleado[idEmpleado].correo = empleado.correo
+    this.listaEmpleado[idEmpleado].fechaIngreso = empleado.fechaIngreso
+    this.listaEmpleado[idEmpleado].telefono = empleado.telefono
+    this.listaEmpleado[idEmpleado].sexo = empleado.sexo
+    this.listaEmpleado[idEmpleado].estadoCivil = empleado.estadoCivil
+  }
 }
