@@ -49,4 +49,8 @@ export class EmpleadoService {
   agregarEmpleado(empleado: Empleado){
     this.listaEmpleado.unshift(empleado)
   }
+
+  getEmpleadosEditar(index:number){
+    return this.listaEmpleado[index]
+  }
 }
