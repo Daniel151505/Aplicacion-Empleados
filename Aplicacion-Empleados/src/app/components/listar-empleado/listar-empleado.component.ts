@@ -6,6 +6,7 @@ import { EmpleadoService } from 'src/app/services/empleado.service';
 import { Empleado } from 'src/app/models/empleado.module';
 import { MatDialog } from '@angular/material/dialog';
 import { MensajeConfirmacionComponent } from '../shared/mensaje-confirmacion/mensaje-confirmacion.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-listar-empleado',
@@ -21,7 +22,8 @@ export class ListarEmpleadoComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(private empleadoService: EmpleadoService, 
-              public dialog: MatDialog) { }
+              public dialog: MatDialog,
+              public snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.cargarEmpleados();
