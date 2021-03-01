@@ -35,4 +35,9 @@ export class ListarEmpleadoComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
+  eliminarEmpleado(index: number) {
+    this.empleadoService.eliminarEmpleado(index)
+    this.cargarEmpleados()
+  }
+
 }
