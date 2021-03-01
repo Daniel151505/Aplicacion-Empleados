@@ -41,4 +41,8 @@ export class EmpleadoService {
   getEmpleado() {
    return this.listaEmpleado.slice()
   }
+
+  eliminarEmpleado(index: number) {
+    this.listaEmpleado.splice(index,1)
+  }
 }
