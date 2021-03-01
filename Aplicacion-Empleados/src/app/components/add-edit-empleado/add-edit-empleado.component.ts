@@ -55,11 +55,27 @@ export class AddEditEmpleadoComponent implements OnInit {
       estadoCivil:this.myform.get('estadoCivil').value,
       sexo:this.myform.get('sexo').value,
     }
+
+    if (this.idEmpleado !== undefined) {
+      this.editarEmpleado(empleado)
+    }else {
+      this.agregarEmpleado(empleado)
+    }
+
+    
   }
-  
+
   agregarEmpleado(empleado: Empleado){
     this.empleadoService.agregarEmpleado(empleado)
     this.snackBar.open('¡El empleado fue registrado con éxito!','',{
+      duration: 30000
+    })
+    this.route.navigate(['/'])
+  }
+
+  editarEmpleado(empleado: Empleado){
+    this.empleadoService.editEmpleado(empleado, this.idEmpleado)
+    this.snackBar.open('¡El empleado fue actualizado con éxito!','',{
       duration: 30000
     })
     this.route.navigate(['/'])
