@@ -2,3 +2,9 @@ span {
     margin: auto;
     text-align: center;
 }
+
+.color {
+    color: white;
+    font-size: 40px;
+    font-family: 'Russo One', sans-serif;
+}
