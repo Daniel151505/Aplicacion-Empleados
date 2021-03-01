@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
+import { Empleado } from 'src/app/models/empleado.module';
+import { EmpleadoService } from 'src/app/services/empleado.service';
 
 @Component({
   selector: 'app-add-edit-empleado',
@@ -16,7 +18,8 @@ export class AddEditEmpleadoComponent implements OnInit {
   estadosCiviles: any[] = ['Soltero' , 'Casado' , 'Divorciado']
   myform: FormGroup
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private empleadoService: EmpleadoService) {
       this.myform = this.fb.group({
         nombreCompleto: [''],
         correo: [''],
@@ -28,6 +31,18 @@ export class AddEditEmpleadoComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  guardarEmpleado(){
+    const empleado: Empleado = {
+      nombreCompleto:this.myform.get('nombreCompleto').value,
+      correo:this.myform.get('correo').value,
+      fechaIngreso:this.myform.get('fechaIngreso').value,
+      telefono:this.myform.get('telefono').value,
+      estadoCivil:this.myform.get('estadoCivil').value,
+      sexo:this.myform.get('sexo').value,
+    }
+    this.empleadoServicse.agregarEmpleado(empleado)
   }
 
 }
