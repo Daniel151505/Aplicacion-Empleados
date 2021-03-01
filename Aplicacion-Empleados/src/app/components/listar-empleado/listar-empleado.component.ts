@@ -46,8 +46,10 @@ export class ListarEmpleadoComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.empleadoService.eliminarEmpleado(index)
-      this.cargarEmpleados()
+      if (result === 'aceptar') {
+        this.empleadoService.eliminarEmpleado(index);
+        this.cargarEmpleados();
+      }
     });
 
   }
