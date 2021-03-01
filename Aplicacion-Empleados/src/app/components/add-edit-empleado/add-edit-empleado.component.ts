@@ -42,6 +42,7 @@ export class AddEditEmpleadoComponent implements OnInit {
   ngOnInit(): void {
     if (this.idEmpleado !== undefined) {
         this.accion = 'Editar'
+        this.editarEmpleado()
     }
   }
 
@@ -59,6 +60,18 @@ export class AddEditEmpleadoComponent implements OnInit {
       duration: 30000
     })
     this.route.navigate(['/'])
+  }
+
+  editarEmpleado(){
+    const empleado: Empleado = this.empleadoService.getEmpleadosEditar(this.idEmpleado)
+    this.myform.patchValue({
+      nombreCompleto: empleado.nombreCompleto,
+      correo: empleado.correo,
+      fechaIngreso: empleado.fechaIngreso,
+      telefono: empleado.telefono,
+      estadoCivil: empleado.estadoCivil,
+      sexo: empleado.sexo
+    })
   }
 
 }
