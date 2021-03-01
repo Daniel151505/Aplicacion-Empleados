@@ -16,7 +16,16 @@ export class AddEditEmpleadoComponent implements OnInit {
   estadosCiviles: any[] = ['Soltero' , 'Casado' , 'Divorciado']
   myform: FormGroup
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+      this.myform = this.fb.group({
+        nombreCompleto: [''],
+        correo: [''],
+        fechaIngreso: [''],
+        telefono: [''],
+        estadoCivil: [''],
+        sexo: ['']
+      })
+   }
 
   ngOnInit(): void {
   }
