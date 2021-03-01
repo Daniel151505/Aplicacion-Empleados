@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-edit-empleado.component.css']
 })
 export class AddEditEmpleadoComponent implements OnInit {
-
+  estadosCiviles: any[] = ['Soltero' , 'Casado' , 'Divorciado']
   constructor() { }
 
   ngOnInit(): void {
