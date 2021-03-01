@@ -51,6 +51,9 @@ export class ListarEmpleadoComponent implements OnInit {
       if (result === 'aceptar') {
         this.empleadoService.eliminarEmpleado(index);
         this.cargarEmpleados();
+        this.snackBar.open('¡El empleado fue eliminado con éxito!','',{
+          duration: 30000
+        })
       }
     });
 
