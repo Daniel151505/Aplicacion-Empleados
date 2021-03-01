@@ -42,7 +42,7 @@ export class AddEditEmpleadoComponent implements OnInit {
   ngOnInit(): void {
     if (this.idEmpleado !== undefined) {
         this.accion = 'Editar'
-        this.editarEmpleado()
+        this.editar()
     }
   }
 
@@ -55,6 +55,9 @@ export class AddEditEmpleadoComponent implements OnInit {
       estadoCivil:this.myform.get('estadoCivil').value,
       sexo:this.myform.get('sexo').value,
     }
+  }
+  
+  agregarEmpleado(empleado: Empleado){
     this.empleadoService.agregarEmpleado(empleado)
     this.snackBar.open('¡El empleado fue registrado con éxito!','',{
       duration: 30000
@@ -62,7 +65,7 @@ export class AddEditEmpleadoComponent implements OnInit {
     this.route.navigate(['/'])
   }
 
-  editarEmpleado(){
+  editar(){
     const empleado: Empleado = this.empleadoService.getEmpleadosEditar(this.idEmpleado)
     this.myform.patchValue({
       nombreCompleto: empleado.nombreCompleto,
