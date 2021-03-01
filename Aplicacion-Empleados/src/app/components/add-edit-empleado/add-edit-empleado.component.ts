@@ -47,6 +47,9 @@ export class AddEditEmpleadoComponent implements OnInit {
       sexo:this.myform.get('sexo').value,
     }
     this.empleadoService.agregarEmpleado(empleado)
+    this.snackBar.open('¡El empleado fue registrado con éxito!','',{
+      duration: 30000
+    })
     this.route.navigate(['/'])
   }
 
