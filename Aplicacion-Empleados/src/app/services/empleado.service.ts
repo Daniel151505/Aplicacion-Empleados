@@ -45,4 +45,8 @@ export class EmpleadoService {
   eliminarEmpleado(index: number) {
     this.listaEmpleado.splice(index,1)
   }
+
+  agregarEmpleado(empleado: Empleado){
+    this.listaEmpleado.unshift(empleado)
+  }
 }
