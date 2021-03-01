@@ -21,7 +21,7 @@ export class AddEditEmpleadoComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private empleadoService: EmpleadoService,
-              private router: Router) {
+              private route: Router) {
       this.myform = this.fb.group({
         nombreCompleto: [''],
         correo: [''],
@@ -45,6 +45,7 @@ export class AddEditEmpleadoComponent implements OnInit {
       sexo:this.myform.get('sexo').value,
     }
     this.empleadoService.agregarEmpleado(empleado)
+    this.route.navigate(['/'])
   }
 
 }
