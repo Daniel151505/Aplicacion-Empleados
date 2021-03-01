@@ -18,3 +18,10 @@ button {
 .mda-form-msg {
     color: #f44336;
 }
+
+
+.color{
+    color: white;
+    font-size: 40px;
+    font-family: 'Fredoka One', cursive;
+}
