@@ -12,5 +12,9 @@ button {
 }
 
 .span{
-margin-top: -20px;
+    margin-top: -20px;
+}
+
+.mda-form-msg {
+    color: #f44336;
 }
