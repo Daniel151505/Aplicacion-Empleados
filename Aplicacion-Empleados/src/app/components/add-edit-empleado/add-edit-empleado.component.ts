@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Empleado } from 'src/app/models/empleado.module';
 import { EmpleadoService } from 'src/app/services/empleado.service';
 
@@ -23,7 +23,8 @@ export class AddEditEmpleadoComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private empleadoService: EmpleadoService,
               private route: Router,
-              private snackBar: MatSnackBar) {
+              private snackBar: MatSnackBar,
+              private Route: ActivatedRoute) {
       this.myform = this.fb.group({
         nombreCompleto: ['', [Validators.required, Validators.maxLength(20)]], 
         correo: ['', [Validators.required, Validators.email]],
