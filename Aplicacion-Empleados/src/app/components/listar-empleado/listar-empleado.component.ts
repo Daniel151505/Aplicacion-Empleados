@@ -52,7 +52,7 @@ export class ListarEmpleadoComponent implements OnInit {
         this.empleadoService.eliminarEmpleado(index);
         this.cargarEmpleados();
         this.snackBar.open('¡El empleado fue eliminado con éxito!','',{
-          duration: 30000
+          duration: 3000
         })
       }
     });
