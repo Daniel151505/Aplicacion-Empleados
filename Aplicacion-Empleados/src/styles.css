@@ -8,3 +8,7 @@ simple-snack-bar span {
     margin: auto;
     text-align: center;
 }
+
+.btn-warn:focus {
+    outline: none;
+}
