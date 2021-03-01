@@ -20,7 +20,7 @@ export class AddEditEmpleadoComponent implements OnInit {
   estadosCiviles: any[] = ['Soltero' , 'Casado' , 'Divorciado']
   myform: FormGroup
   idEmpleado: any
-  accion = 'Crear'
+  accion = 'Agregar'
 
   constructor(private fb: FormBuilder,
               private empleadoService: EmpleadoService,
