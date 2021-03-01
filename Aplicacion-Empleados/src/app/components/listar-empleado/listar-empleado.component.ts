@@ -5,6 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { EmpleadoService } from 'src/app/services/empleado.service';
 import { Empleado } from 'src/app/models/empleado.module';
 import { MatDialog } from '@angular/material/dialog';
+import { MensajeConfirmacionComponent } from '../shared/mensaje-confirmacion/mensaje-confirmacion.component';
 
 @Component({
   selector: 'app-listar-empleado',
@@ -39,8 +40,16 @@ export class ListarEmpleadoComponent implements OnInit {
   }
 
   eliminarEmpleado(index: number) {
-    this.empleadoService.eliminarEmpleado(index)
-    this.cargarEmpleados()
+    const dialogRef = this.dialog.open(MensajeConfirmacionComponent, {
+      width: '350px',
+      data: {mensaje: 'Esta seguro que desea eliminar al empleado'}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.empleadoService.eliminarEmpleado(index)
+      this.cargarEmpleados()
+    });
+
   }
 
 }
